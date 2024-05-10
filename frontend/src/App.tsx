@@ -13,6 +13,7 @@ function App() {
         Greet(name).then(updateResultText);
     }
 
+
     return (
         <div id="App">
             <img src={logo} id="logo" alt="logo"/>

@@ -17,8 +17,8 @@ func NewApi() *Api {
     return &Api{}
 }
 
-func (this *Api) TestFunc() string {
-    return "Backend Connected!"
+func (this *Api) TestFunc() (string, string) {
+    return "Backend Connected!","will this go through?"
 }
 
 func (this *Api) GetAllRecipes() ([]recipe.Recipe, error) {
@@ -32,6 +32,21 @@ func (this *Api) GetAllRecipes() ([]recipe.Recipe, error) {
 
 
     return nil, nil
-
 }
 
+func (this *Api) GetRecipe(id int) (recipe.Recipe, error) {
+    return recipe.Recipe{}, nil
+}
+
+func (this *Api) SaveRecipe(recipe recipe.Recipe) error {
+    return nil
+}
+
+func (this *Api) SwapIngredients(r recipe.Recipe, indexArray []int) (recipe.Recipe, error) {
+    err := r.SwapIngredients(indexArray)
+    return r,err 
+}
+
+func (this *Api) DeleteRecipe(recipe recipe.Recipe) error {
+    return nil
+}

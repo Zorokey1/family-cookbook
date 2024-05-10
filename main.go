@@ -14,7 +14,7 @@ var assets embed.FS
 func main() {
 	// Create an instance of the app structure
 	app := NewApp()
-    api := backend.NewApi()
+	api := backend.NewApi()
 
 	// Create application with options
 	err := wails.Run(&options.App{
@@ -28,7 +28,7 @@ func main() {
 		OnStartup:        app.startup,
 		Bind: []interface{}{
 			app,
-            api,
+			api,
 		},
 	})
 
